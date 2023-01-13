@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Login</title>
+</head>
+<body>
+    <div>
+    <h1>Personal Finance Tracker </h1>
+    <form action="/times" method="POST">
+        <select name="type" id="clock">
+            <option value="0">Select Credit or Debit</option>
+            <option value="CREDIT">CREDIT</option>
+            <option value="DEBIT">DEBIT</option>
+        </select>
+        <input type="date" name="date">
+        <input type="text" placeholder="Transaction" name="name">
+        <input type="text" placeholder="Amount" name="amount">
+        <button id="submit-button" type="submit">Submit</button>
+    </form>
+    <h2> Transaction History </h2>
+    
+    <ul class="quotes">
+
+        <% for(var i = 0; i < times.length; i++) {%>
+            <li class="display">
+                <span><%= times[i].date %></span>:
+                <span><%= times[i].type %></span>:
+                <span><%= times[i].name %></span>:
+                $<span><%= times[i].amount %></span>
+            </li>
+        <% } %>
+    </ul>
+    
+        <button id="delete-button">Clear Board</button>
+    </div>
+    <script src="/main.js"></script>
+</body>
+</html>
